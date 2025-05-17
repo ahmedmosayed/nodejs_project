@@ -1,6 +1,5 @@
 const db = require('../db');
 
-// عرض قائمة المنتجات مع فلاتر category_id, price, brand
 exports.listProducts = (req, res) => {
   const { category, minPrice, maxPrice, brand } = req.query;
 
@@ -8,7 +7,7 @@ exports.listProducts = (req, res) => {
   const params = [];
 
   if (category) {
-    query += ' AND category_id = ?';  // تم تعديل category إلى category_id
+    query += ' AND category_id = ?';  
     params.push(category);
   }
 
@@ -33,7 +32,6 @@ exports.listProducts = (req, res) => {
   });
 };
 
-// تفاصيل منتج مع الصور والوصف والسعر والتقييمات
 exports.getProductDetails = (req, res) => {
   const productId = req.params.id;
 
