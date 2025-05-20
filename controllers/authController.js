@@ -104,7 +104,6 @@ exports.forgotPassword = (req, res) => {
   });
 };
 
-// إعادة تعيين كلمة المرور
 exports.resetPassword = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -126,7 +125,6 @@ exports.resetPassword = async (req, res) => {
   });
 };
 
-// جلب ملف المستخدم (بعد التحقق من التوكن)
 exports.getProfile = (req, res) => {
   // req.user موجود من ميدلوير التحقق (authMiddleware)
   const userId = req.user.id;
